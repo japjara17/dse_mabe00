@@ -57,11 +57,11 @@ void hal_entry(void) {
         /* Determine the next state of the LEDs */
         if(IOPORT_LEVEL_LOW == level)
         {
-            level = IOPORT_LEVEL_HIGH;
+            level = IOPORT_LEVEL_LOW;
         }
         else
         {
-            level = IOPORT_LEVEL_LOW;
+            level = IOPORT_LEVEL_HIGH;
         }
 
         /* Update all board LEDs */
