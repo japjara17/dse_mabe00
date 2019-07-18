@@ -70,7 +70,7 @@ all: PWM_Test.elf secondary-outputs
 PWM_Test.elf: $(OBJS) $(USER_OBJS) $(LINKER_SCRIPT)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU ARM Cross C Linker'
-	$(file > PWM_Test.elf.in,-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -T "C:\\Users\\jpjmexip\\e2_studio\\workspace740\\dse_mabe_01\\PWM_Test\\script/s7g2.ld" -Xlinker --gc-sections -L "C:\\Users\\jpjmexip\\e2_studio\\workspace740\\dse_mabe_01\\PWM_Test\\synergy\\ssp\\src\\bsp\\cmsis\\DSP_Lib\\cm4_gcc" -Wl,-Map,"PWM_Test.map" --specs=nano.specs --specs=rdimon.specs -o "PWM_Test.elf" -Wl,--start-group $(OBJS) $(USER_OBJS) $(LIBS) -Wl,--end-group)
+	$(file > PWM_Test.elf.in,-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -T "C:\\git\\dse_mabe00\\PWM_Test\\script/s7g2.ld" -Xlinker --gc-sections -L "C:\\git\\dse_mabe00\\PWM_Test\\synergy\\ssp\\src\\bsp\\cmsis\\DSP_Lib\\cm4_gcc" -Wl,-Map,"PWM_Test.map" --specs=nano.specs --specs=rdimon.specs -o "PWM_Test.elf" -Wl,--start-group $(OBJS) $(USER_OBJS) $(LIBS) -Wl,--end-group)
 	arm-none-eabi-gcc @"PWM_Test.elf.in"
 	@echo 'Finished building target: $@'
 	@echo ' '

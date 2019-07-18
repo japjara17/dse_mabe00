@@ -58,9 +58,11 @@ void hal_entry(void) {
         if(IOPORT_LEVEL_LOW == level)
         {
             level = IOPORT_LEVEL_HIGH;
+            level = IOPORT_LEVEL_HIGH;
         }
         else
         {
+            level = IOPORT_LEVEL_LOW;
             level = IOPORT_LEVEL_LOW;
         }
 
